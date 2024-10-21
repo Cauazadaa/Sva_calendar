@@ -88,7 +88,7 @@ async function displayReminders() {
         });
         
         // Adiciona lembretes para os dias correspondentes
-        reminders.forEach((reminder) => {
+        reminders.forEach(async(reminder) => {
             const day = Array.from(days).find(day => day.dataset.date === reminder.date);
             if (day) {
                 // Verifica se já há lembretes neste dia e remove todos os existentes
@@ -108,6 +108,21 @@ async function displayReminders() {
                 deleteButton.addEventListener('click', () => deleteReminder(reminder.id, reminderDiv));//chama a funçao de exclusão
                 reminderDiv.appendChild(deleteButton);//botao de delete ao lembrete
                 day.appendChild(reminderDiv); // Adiciona o lembrete como filho do dia
+               
+                //obter a previsão do tempo
+                if (reminder.city) {
+                    const weather = await getWeather(reminder.city);
+                    if (weather) {
+                        // Cria um ícone para a previsão do tempo
+                        const weatherIcon = document.createElement('img');
+                        weatherIcon.src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+                        weatherIcon.alt = weather.description;
+                        weatherIcon.className = 'weather-icon'; // Adicione uma classe para estilização, se necessário
+                        reminderDiv.appendChild(weatherIcon);
+                    }
+                }
+            
+                // ... restante do seu código para criar o lembrete
             }
         });
         
@@ -115,6 +130,32 @@ async function displayReminders() {
     }
     catch (error) {
         console.error('Erro ao carregar lembretes:', error);
+    }
+    
+
+            // Obter a previsão do tempo se a cidade estiver disponível
+;
+async function getWeather(city){
+    const API_KEY = '289cf63b1aae26d00c76217d35905b25';
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+        if(!response.ok){
+            throw new Error(`Falha na requisição: ${response.status}`);
+        }
+        const weatherData = await response.json();
+        return{
+            temperature: weatherData.main.temp,
+            description: weatherData.weather[0].description,
+            icon: weatherData.weather[0].icon,
+
+        };
+    }catch(erro){
+        console.error(error);
+        return null;
+    }        
+   
+        
+
     }
 }
 
