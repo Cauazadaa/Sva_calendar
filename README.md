@@ -23,11 +23,11 @@ To run this project on your local machine, follow these steps:
 
 1. **Clone the Repository**:
    Open your terminal and run the following command to clone the repository:
-   ```bash
+   ```
    git clone https://github.com/Cauzadaa/Sva_calendar.git
-   Navigate to the Project Directory: Change into the project directory:
 
-bash
+    Navigate to the Project Directory
+
 
 cd Sva_calendar
 Install Dependencies: Install the necessary dependencies using npm:
@@ -36,8 +36,8 @@ Install Dependencies: Install the necessary dependencies using npm:
 npm install express cors
 **Run the Server**: 
 
-node server/server.js
-Make sure you're in the root of the project folder, and the server.js file is located in the server folder.
+node server.js
+Make sure you're in the root of the project folder.
 
 Step 4: Access the Application
 Once the server is running, open your web browser and go to:
