@@ -28,7 +28,9 @@ To run this project on your local machine, follow these steps:
 
 
 cd Sva_calendar
-Install Dependencies: Install the necessary dependencies using:
+Install Dependencies:
+--node.js
+Install the necessary dependencies using:
 
 
 **npm install**
