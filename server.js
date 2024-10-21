@@ -9,7 +9,7 @@ const PORT = 3000;
 // Middleware
 app.use(express.json());
 app.use(cors()); // Permite requisições de outros domínios
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname,)));
 const remindersFilePath = path.join(__dirname, 'reminders.json');
 
 // Função para ler os lembretes do arquivo JSON
