@@ -8,13 +8,11 @@ The Calendar Reminder App is a web application built with Node.js and Express th
 - **Delete Reminders**: Users can remove reminders as needed.
 - **Current Day Highlighted**: The application highlights the current day for better visibility.
 - **Add more than one reminder a day**: You can also add more reminders in the same day.
+- **See a weather icon on the reminders using the openweathermap api**
 
 ### Incomplete Features
 The following functionalities are not yet implemented:
 7. The user may edit a reminder's information. 
-8.When a reminder has city information, the application may use a free API to get the
-weather forecast for that day, and display a graphic icon within the reminder, as
-shown above. https://openweathermap.org/api is an example that can be used.
 9. You may allow the user to change the current month.
 
 ## Running the Project Locally
@@ -33,10 +31,10 @@ cd Sva_calendar
 Install Dependencies: Install the necessary dependencies using npm:
 
 
-npm install express cors
+-npm install 
 **Run the Server**: 
 
-node server.js
+-node server.js
 Make sure you're in the root of the project folder.
 
 Step 4: Access the Application
