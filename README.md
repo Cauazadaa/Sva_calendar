@@ -27,14 +27,12 @@ To run this project on your local machine, follow these steps:
     Navigate to the Project Directory
 
 
-cd Sva_calendar
+
 Install Dependencies:
 --node.js
-Install the necessary dependencies using:
+--cd<root_projeto>
 
-
-**npm install**
-__just if you need: npm start__
+__you need: npm i__
  
 And run the server:
 **node server.js**
