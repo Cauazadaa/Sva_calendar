@@ -34,6 +34,7 @@ Install the necessary dependencies using:
 
 
 **npm install**
+__just if you need: npm start__
  
 And run the server:
 **node server.js**
